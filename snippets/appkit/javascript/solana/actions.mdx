@@ -32,7 +32,20 @@ The wallet provider.
 const walletProvider = modal.getWalletProvider();
 ```
 
-// TODO - add sign message example
+
+### Sign Message
+
+```ts
+const walletProvider = modal.getWalletProvider();
+const address = modal.getAddress();
+
+if (walletProvider && address) {
+  const encodedMessage = new TextEncoder().encode('Hello from AppKit');
+  const signature = await walletProvider.signMessage(encodedMessage);
+  console.log(signature);
+}
+```
+
 
 ### getWalletProviderType
 
